@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #f5f2eb;
+  --color-limestone: #ebe6dc;
+  --color-charcoal: #1c1b19;
+  --color-stone: #8a847a;
+  --color-clay: #a66b4e;
+  --color-earth: #6b6b52;
+  --color-warm-grey: #d4cfc4;
+
+  --font-display: var(--font-cormorant);
+  --font-body: var(--font-dm-sans);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ivory text-charcoal font-body text-base leading-relaxed;
+  }
+
+  ::selection {
+    @apply bg-clay/20 text-charcoal;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-clay;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+  }
+
+  .container-editorial {
+    @apply mx-auto w-full max-w-[1440px] px-6 md:px-10 lg:px-16;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-charcoal transition-transform duration-300;
+  }
+
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    @apply scale-x-100;
+  }
+
+  .image-hover {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .group:hover .image-hover {
+    @apply scale-[1.03];
+  }
+}
