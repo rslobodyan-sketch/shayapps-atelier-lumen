@@ -35,10 +35,8 @@ export function ProjectGrid({ projects, showFilter = true }: ProjectGridProps) {
                 aria-selected={activeCategory === cat}
                 onClick={() => setActiveCategory(cat)}
                 className={cn(
-                  "text-xs tracking-[0.15em] uppercase transition-colors duration-300 pb-1 border-b-2",
-                  activeCategory === cat
-                    ? "text-charcoal border-clay"
-                    : "text-stone border-transparent hover:text-charcoal"
+                  "filter-tab",
+                  activeCategory === cat ? "filter-tab-active" : "filter-tab-inactive"
                 )}
               >
                 {cat}
@@ -57,11 +55,22 @@ export function ProjectGrid({ projects, showFilter = true }: ProjectGridProps) {
           transition={{ duration: 0.3 }}
           className="container-editorial"
         >
+          {filtered.length === 0 ? (
+            <div className="empty-state">
+              <p className="font-display text-2xl md:text-3xl text-charcoal mb-3">
+                No projects in this category
+              </p>
+              <p className="text-stone text-sm max-w-md mx-auto leading-relaxed">
+                Try another filter to explore our residential, hospitality, cultural and commercial work.
+              </p>
+            </div>
+          ) : (
           <div className="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-y-24 gap-x-6">
             {filtered.map((project, index) => (
               <ProjectGridItem key={project.slug} project={project} index={index} />
             ))}
           </div>
+          )}
         </motion.div>
       </AnimatePresence>
     </div>
@@ -97,7 +106,7 @@ function ProjectGridItem({ project, index }: { project: Project; index: number }
             className="absolute inset-0"
           />
           <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 transition-colors duration-500" />
-          <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full border border-ivory/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+          <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full border border-ivory/60 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 translate-y-0 md:translate-y-2 md:group-hover:translate-y-0">
             <span className="text-ivory text-sm" aria-hidden="true">&rarr;</span>
           </div>
         </div>

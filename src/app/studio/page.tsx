@@ -23,11 +23,11 @@ export default function StudioPage() {
     <PageTransition>
       <section className="pt-32 md:pt-40 pb-16 md:pb-24">
         <div className="container-editorial">
-          <p className="text-xs tracking-[0.2em] uppercase text-stone mb-4">About</p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-charcoal leading-[0.95] max-w-4xl">
+          <p className="page-eyebrow">About</p>
+          <h1 className="page-title max-w-4xl">
             A studio shaped by place and material
           </h1>
-          <p className="mt-8 text-stone text-base md:text-lg max-w-2xl leading-relaxed">
+          <p className="page-intro">
             Founded in 2010, Atelier Lumen works at the intersection of architecture and
             interior design — creating spaces for hospitality, residential and cultural
             clients across Europe.
@@ -161,7 +161,7 @@ export default function StudioPage() {
           </h2>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-charcoal border border-charcoal px-8 py-4 hover:bg-charcoal hover:text-ivory transition-colors"
+            className="btn-primary"
           >
             Get in touch
             <span aria-hidden="true">&rarr;</span>

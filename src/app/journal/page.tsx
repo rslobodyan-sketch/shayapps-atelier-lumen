@@ -19,11 +19,9 @@ export default function JournalPage() {
     <PageTransition>
       <section className="pt-32 md:pt-40 pb-20 md:pb-32">
         <div className="container-editorial mb-16 md:mb-24">
-          <p className="text-xs tracking-[0.2em] uppercase text-stone mb-4">Writing</p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-charcoal leading-[0.95]">
-            Journal
-          </h1>
-          <p className="mt-6 text-stone text-base md:text-lg max-w-xl leading-relaxed">
+          <p className="page-eyebrow">Writing</p>
+          <h1 className="page-title">Journal</h1>
+          <p className="page-intro">
             Essays on architecture, materials, places and the quiet work of making space.
           </p>
 
@@ -35,10 +33,8 @@ export default function JournalPage() {
                 aria-selected={activeCategory === cat}
                 onClick={() => setActiveCategory(cat)}
                 className={cn(
-                  "text-xs tracking-[0.15em] uppercase transition-colors duration-300 pb-1 border-b-2",
-                  activeCategory === cat
-                    ? "text-charcoal border-clay"
-                    : "text-stone border-transparent hover:text-charcoal"
+                  "filter-tab",
+                  activeCategory === cat ? "filter-tab-active" : "filter-tab-inactive"
                 )}
               >
                 {cat}
@@ -48,9 +44,20 @@ export default function JournalPage() {
         </div>
 
         <div className="container-editorial space-y-16 md:space-y-24">
-          {filtered.map((article, i) => (
-            <JournalCard key={article.slug} article={article} variant="horizontal" index={i} />
-          ))}
+          {filtered.length === 0 ? (
+            <div className="empty-state">
+              <p className="font-display text-2xl md:text-3xl text-charcoal mb-3">
+                No articles in this category
+              </p>
+              <p className="text-stone text-sm max-w-md mx-auto leading-relaxed">
+                Browse all categories for essays on architecture, materials, places and studio practice.
+              </p>
+            </div>
+          ) : (
+            filtered.map((article, i) => (
+              <JournalCard key={article.slug} article={article} variant="horizontal" index={i} />
+            ))
+          )}
         </div>
       </section>
     </PageTransition>

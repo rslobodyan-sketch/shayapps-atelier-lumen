@@ -14,11 +14,11 @@ export default function ContactPage() {
     <PageTransition>
       <section className="pt-32 md:pt-40 pb-16 md:pb-24">
         <div className="container-editorial max-w-4xl">
-          <p className="text-xs tracking-[0.2em] uppercase text-stone mb-4">Enquiries</p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-charcoal leading-[1.05]">
+          <p className="page-eyebrow">Enquiries</p>
+          <h1 className="font-display text-[clamp(2rem,6vw,4rem)] text-charcoal leading-[1.08] tracking-tight max-w-3xl">
             Let&apos;s make something worth remembering.
           </h1>
-          <p className="mt-8 text-stone text-base md:text-lg max-w-xl leading-relaxed">
+          <p className="page-intro">
             Whether you&apos;re planning a new home, a boutique hotel, or a cultural space —
             we&apos;d like to hear about it. Share a few details and we&apos;ll be in touch
             within two business days.

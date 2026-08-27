@@ -43,7 +43,7 @@ export function JournalCard({ article, variant = "default", index = 0 }: Journal
           <p className="mt-4 text-stone leading-relaxed max-w-lg">{article.excerpt}</p>
           <Link
             href={`/journal/${article.slug}`}
-            className="inline-block mt-6 text-xs tracking-[0.15em] uppercase text-charcoal link-underline"
+            className="inline-block mt-6 btn-text link-underline"
           >
             Read article
           </Link>

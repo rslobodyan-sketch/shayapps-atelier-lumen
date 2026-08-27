@@ -15,16 +15,10 @@ export default function NotFound() {
             Let&apos;s find your way back.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link
-              href="/"
-              className="text-xs tracking-[0.2em] uppercase text-charcoal border border-charcoal px-8 py-4 hover:bg-charcoal hover:text-ivory transition-colors"
-            >
+            <Link href="/" className="btn-primary">
               Return home
             </Link>
-            <Link
-              href="/work"
-              className="text-xs tracking-[0.2em] uppercase text-stone link-underline"
-            >
+            <Link href="/work" className="btn-text link-underline text-stone">
               View work
             </Link>
           </div>

@@ -19,7 +19,7 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
       overlap: false,
     },
     {
-      wrapper: "col-span-12 md:col-span-5 md:col-start-8 md:-mt-32",
+      wrapper: "col-span-12 md:col-span-5 md:col-start-8 md:-mt-32 max-md:mt-0",
       aspect: "aspect-[3/4]",
       titleSize: "text-3xl md:text-5xl",
       overlap: true,
@@ -62,7 +62,7 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                   className="absolute inset-0"
                 />
               </div>
-              <div className={layout.overlap ? "md:-mt-16 relative z-10 md:pl-8" : ""}>
+              <div className={layout.overlap ? "md:-mt-16 relative z-10 md:pl-8 max-md:mt-0" : ""}>
                 <span className="text-xs tracking-[0.2em] text-stone mb-2 block">
                   {String(i + 1).padStart(2, "0")}
                 </span>

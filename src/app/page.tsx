@@ -54,7 +54,7 @@ export default function HomePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+            className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2"
             aria-hidden="true"
           >
             <span className="text-[10px] tracking-[0.3em] uppercase text-ivory/60">Scroll</span>
@@ -79,7 +79,7 @@ export default function HomePage() {
           <div className="mt-16 md:mt-24 text-center">
             <Link
               href="/work"
-              className="inline-flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-charcoal link-underline"
+              className="btn-text link-underline"
             >
               View all projects
               <span aria-hidden="true">&rarr;</span>
@@ -132,13 +132,13 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="group flex items-center justify-between py-6 md:py-8 border-b border-warm-grey/40"
+                className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-6 py-6 md:py-8 border-b border-warm-grey/40"
               >
-                <Link href="/services" className="flex items-baseline gap-6 md:gap-10 flex-1">
-                  <span className="text-xs tracking-[0.15em] text-stone w-8">
+                <Link href="/services" className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 md:gap-10 flex-1 min-w-0">
+                  <span className="text-xs tracking-[0.15em] text-stone shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-display text-2xl md:text-4xl text-charcoal group-hover:text-clay transition-colors">
+                  <span className="font-display text-2xl md:text-4xl text-charcoal group-hover:text-clay transition-colors leading-tight">
                     {service}
                   </span>
                 </Link>
@@ -180,7 +180,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/work/foundry-hotel"
-              className="inline-flex items-center gap-3 mt-8 text-xs tracking-[0.2em] uppercase text-ivory border border-ivory/40 px-6 py-3 hover:bg-ivory hover:text-charcoal transition-colors"
+              className="btn-primary-light mt-8"
             >
               View project
             </Link>
@@ -232,7 +232,7 @@ export default function HomePage() {
           <div className="mt-16 text-center">
             <Link
               href="/journal"
-              className="inline-flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-charcoal link-underline"
+              className="btn-text link-underline"
             >
               Read the journal
               <span aria-hidden="true">&rarr;</span>
@@ -258,7 +258,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 mt-12 text-xs tracking-[0.2em] uppercase text-charcoal border border-charcoal px-10 py-4 hover:bg-charcoal hover:text-ivory transition-colors duration-300"
+              className="btn-primary mt-12 px-10"
             >
               Start a conversation
               <span aria-hidden="true">&rarr;</span>

@@ -32,7 +32,7 @@ export function ContactForm() {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="py-12 text-center"
+        className="py-16 text-left md:py-20 md:pl-2 border-t border-warm-grey/30"
       >
         <p className="font-display text-3xl text-charcoal mb-4">Thank you.</p>
         <p className="text-stone">
@@ -70,15 +70,12 @@ export function ContactForm() {
           name="description"
           rows={6}
           required
-          className="w-full bg-transparent border-b border-warm-grey/60 py-3 text-charcoal placeholder:text-stone/60 focus:border-clay focus:outline-none transition-colors resize-none"
+          className="form-input resize-none"
           placeholder="Tell us about your project, site, and ambitions."
         />
       </div>
 
-      <button
-        type="submit"
-        className="inline-flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-charcoal border border-charcoal px-8 py-4 hover:bg-charcoal hover:text-ivory transition-colors duration-300"
-      >
+      <button type="submit" className="btn-primary">
         Send enquiry
         <span aria-hidden="true">&rarr;</span>
       </button>
@@ -106,7 +103,7 @@ function FormField({ label, name, type = "text", required, placeholder }: FormFi
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full bg-transparent border-b border-warm-grey/60 py-3 text-charcoal placeholder:text-stone/60 focus:border-clay focus:outline-none transition-colors"
+        className="form-input"
       />
     </div>
   );
@@ -130,7 +127,7 @@ function FormSelect({ label, name, options, required }: FormSelectProps) {
         name={name}
         required={required}
         defaultValue=""
-        className="w-full bg-transparent border-b border-warm-grey/60 py-3 text-charcoal focus:border-clay focus:outline-none transition-colors appearance-none cursor-pointer"
+        className="form-select"
       >
         <option value="" disabled>
           Select
@@ -150,13 +147,13 @@ export function ContactInfo() {
     <div className="space-y-8">
       <div>
         <p className="text-xs tracking-[0.2em] uppercase text-stone mb-3">Email</p>
-        <a href={`mailto:${siteConfig.email}`} className="text-charcoal hover:text-clay transition-colors text-lg">
+        <a href={`mailto:${siteConfig.email}`} className="text-charcoal hover:text-clay transition-colors duration-300 text-base md:text-lg link-underline">
           {siteConfig.email}
         </a>
       </div>
       <div>
         <p className="text-xs tracking-[0.2em] uppercase text-stone mb-3">Telephone</p>
-        <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="text-charcoal hover:text-clay transition-colors text-lg">
+        <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="text-charcoal hover:text-clay transition-colors duration-300 text-base md:text-lg">
           {siteConfig.phone}
         </a>
       </div>

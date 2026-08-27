@@ -16,11 +16,9 @@ export default function ServicesPage() {
     <PageTransition>
       <section className="pt-32 md:pt-40 pb-16 md:pb-24">
         <div className="container-editorial max-w-4xl">
-          <p className="text-xs tracking-[0.2em] uppercase text-stone mb-4">What we do</p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-charcoal leading-[0.95]">
-            Services
-          </h1>
-          <p className="mt-8 text-stone text-base md:text-lg leading-relaxed">
+          <p className="page-eyebrow">What we do</p>
+          <h1 className="page-title">Services</h1>
+          <p className="page-intro max-w-2xl">
             We offer integrated architecture and interior design services — from initial
             concept through to construction oversight. Every engagement begins with listening.
           </p>
@@ -86,7 +84,7 @@ export default function ServicesPage() {
           />
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 mt-12 text-xs tracking-[0.2em] uppercase text-charcoal border border-charcoal px-8 py-4 hover:bg-charcoal hover:text-ivory transition-colors"
+            className="btn-primary mt-12"
           >
             Discuss your project
             <span aria-hidden="true">&rarr;</span>

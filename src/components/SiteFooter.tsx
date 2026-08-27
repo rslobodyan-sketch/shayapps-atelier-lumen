@@ -3,8 +3,8 @@ import { navigation, siteConfig } from "@/data/site";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-warm-grey/40 bg-limestone/30">
-      <div className="container-editorial py-16 md:py-24">
+    <footer className="border-t border-warm-grey/40 bg-limestone/30 mt-auto">
+      <div className="container-editorial py-16 md:py-20 lg:py-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
           <div className="md:col-span-5">
             <Link
@@ -40,7 +40,7 @@ export function SiteFooter() {
               <p>{siteConfig.address.line1}</p>
               <p>{siteConfig.address.line2}</p>
               <p className="pt-3">
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-clay transition-colors">
+                <a href={`mailto:${siteConfig.email}`} className="link-underline hover:text-clay transition-colors duration-300">
                   {siteConfig.email}
                 </a>
               </p>

@@ -1,14 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { navigation } from "@/data/site";
+import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
   onClose: () => void;
 }
 
 export function MobileMenu({ onClose }: MobileMenuProps) {
+  const pathname = usePathname();
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -42,7 +46,12 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
             <Link
               href={item.href}
               onClick={onClose}
-              className="block font-display text-4xl md:text-5xl text-charcoal py-4 border-b border-warm-grey/30 hover:text-clay transition-colors"
+              className={cn(
+                "block font-display text-4xl md:text-5xl py-4 border-b border-warm-grey/30 transition-colors",
+                pathname === item.href || pathname.startsWith(item.href + "/")
+                  ? "text-clay"
+                  : "text-charcoal hover:text-clay"
+              )}
             >
               {item.label}
             </Link>

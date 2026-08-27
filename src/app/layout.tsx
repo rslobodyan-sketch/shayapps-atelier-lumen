@@ -41,9 +41,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body className="antialiased">
+      <body className="antialiased min-h-screen flex flex-col">
         <SiteHeader />
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
         <SiteFooter />
       </body>
     </html>

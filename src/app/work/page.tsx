@@ -14,11 +14,9 @@ export default function WorkPage() {
     <PageTransition>
       <section className="pt-32 md:pt-40 pb-20 md:pb-32">
         <div className="container-editorial mb-16 md:mb-24">
-          <p className="text-xs tracking-[0.2em] uppercase text-stone mb-4">Portfolio</p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-charcoal leading-[0.95]">
-            Work
-          </h1>
-          <p className="mt-6 text-stone text-base md:text-lg max-w-xl leading-relaxed">
+          <p className="page-eyebrow">Portfolio</p>
+          <h1 className="page-title">Work</h1>
+          <p className="page-intro">
             Selected architecture and interior projects across residential, hospitality,
             cultural and commercial environments.
           </p>
